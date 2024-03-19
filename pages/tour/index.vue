@@ -1,7 +1,8 @@
 <template>
-  <div class="">
+  <div class="container">
     sadfasdf
     <TourFilter />
+    <TourCardTour />
   </div>
 </template>
   

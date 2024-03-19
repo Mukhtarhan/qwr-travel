@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[800px]">Contact page</div>
+  <div class="container h-[800px]">Contact page</div>
 </template>
   
   <script setup lang="ts">

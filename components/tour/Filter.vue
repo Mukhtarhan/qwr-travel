@@ -1,25 +1,37 @@
 <template>
-  <div class="flex flex-col space-x-12">
-    <div class="ui-filter">
-      <div
-        class="ui-filter-label flex justify-between font-medium text-lg items-center"
-        @click="isExpanded = !isExpanded"
-      >
-        <p>Бюджет</p>
-        <IconsArrow
-          class="ui-filter-label__arrow"
-          :class="{ 'rotate-180': !isExpanded }"
-        />
-      </div>
-      <UiCollapse :is-collapsed="isExpanded" class="mt-5">
-        <input type="range" />
-      </UiCollapse>
-    </div>
+  <div class="flex flex-col max-w-[350px]">
+    <TourFliterItem label="Бюджет">
+      <UiRange />
+    </TourFliterItem>
+    <TourFliterItem label="Страны">
+      <UiCheckBox
+        v-for="item in COUNTRIES"
+        :key="item"
+        :label="item"
+        :is-checked="true"
+      />
+    </TourFliterItem>
+    <TourFliterItem label="Категория отеля">
+      <UiCheckBox
+        v-for="item in RATE_HOTELS"
+        :key="item"
+        :label="item.name"
+        :is-checked="true"
+      />
+    </TourFliterItem>
+    <TourFliterItem label="Формат питания">
+      <UiCheckBox
+        v-for="item in FF"
+        :key="item"
+        :label="item"
+        :is-checked="true"
+      />
+    </TourFliterItem>
   </div>
 </template>
   
   <script setup lang="ts">
-const isExpanded = ref(true);
+import { FF, RATE_HOTELS, COUNTRIES } from './tour.data';
 </script>
   
   <style scoped lang="postcss">

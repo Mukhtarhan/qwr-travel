@@ -5,23 +5,23 @@ export interface Menu {
 
 export const MENU_DATA: Menu[] = [
   {
-    name: "Home",
+    name: "Главный",
     url: "/",
   },
   {
-    name: "Tour",
+    name: "Туры",
     url: "/tour",
   },
   {
-    name: "Promotion",
+    name: "Акции",
     url: "/promotion",
   },
   {
-    name: "About company",
+    name: "О компании",
     url: "/about",
   },
   {
-    name: "Contact",
+    name: "Контакты",
     url: "/contact",
   },
 ];

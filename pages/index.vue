@@ -1,9 +1,11 @@
 <template>
-  <div class="bg-temp items-center flex justify-center">
-    <div class="">
-      <h1 class="text-[54px] font-bold text-white">
-        Отпуск мечты без ожидания
-      </h1>
+  <div class="bg-temp">
+    <div class="container items-center flex justify-center">
+      <div>
+        <h1 class="text-[54px] font-bold text-white">
+          Отпуск мечты без ожидания
+        </h1>
+      </div>
     </div>
   </div>
 </template>
