@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-filter mt-8">
+  <div class="ui-filter">
     <div
       class="ui-filter-label flex justify-between font-medium text-lg items-center"
       @click="isExpanded = !isExpanded"

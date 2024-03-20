@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col max-w-[350px]">
+  <div class="flex flex-col max-w-[350px] gap-8">
     <TourFliterItem label="Бюджет">
       <UiRange />
     </TourFliterItem>
