@@ -1,6 +1,6 @@
 <template>
   <div class="checkbox-price-input flex items-center gap-4">
-    <input type="checkbox" :value="isChecked" />
+    <input type="checkbox" v-model="isChecked" @input="toggle"/>
     <label>
       {{ label }}
     </label>
@@ -8,16 +8,21 @@
 </template>
   
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   label: {
     type: String,
     default: 'Smth',
   },
-  isChecked: {
-    type: Boolean,
-    default: false,
-  },
+
 });
+
+function toggle() {
+  emit('update:isChecked', isChecked.value , props.label)
+}
+
+const emit = defineEmits(['update:isChecked'])
+
+const isChecked = ref(false)
 
 const price = ref(10.99); // Replace with your price value
 

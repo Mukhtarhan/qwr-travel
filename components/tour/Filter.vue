@@ -8,7 +8,7 @@
         v-for="item in COUNTRIES"
         :key="item"
         :label="item"
-        :is-checked="true"
+        :on-update:is-checked="onUpdate()"
       />
     </TourFliterItem>
     <TourFliterItem label="Категория отеля">
@@ -32,6 +32,14 @@
   
   <script setup lang="ts">
 import { FF, RATE_HOTELS, COUNTRIES } from './tour.data';
+
+const emit = defineEmits(['onUpdate'])
+
+function onUpdate() {
+
+}
+
+
 </script>
   
   <style scoped lang="postcss">
