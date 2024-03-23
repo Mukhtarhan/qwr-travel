@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gray-800 text-black">
+  <header class="bg-gray-800 text-black font-semibold">
     <!-- Logo -->
     <div class="container py-4 flex items-center justify-between">
       <div>
@@ -11,27 +11,28 @@
       </div>
 
       <!-- Menu -->
-      <nav class="flex items-center space-x-10 text-white text-xl">
+      <nav class="flex items-center space-x-16 text-white text-lg">
         <NuxtLink
           :to="item.url"
-          class="hover:text-light-blue"
+          class="hover:underline"
           v-for="item in MENU_DATA"
           :key="item.name"
           >{{ item.name }}</NuxtLink
         >
       </nav>
 
-      <div class="flex items-center space-x-2">
+      <div class="flex items-center space-x-2 gap-2">
+        <span class="text-white text-xl mr-3">+7708 288 57 95</span>
         <div>
           <select
-            class="rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-800"
+            class="focus:outline-none text-m font-semibold py-2 px-3 rounded-xl border-[1px] bg-gray-100 hover:opacity-95"
           >
             <option value="EN">EN</option>
             <option value="RU">RU</option>
             <option value="KZ">KZ</option>
           </select>
         </div>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">
+        <button class="text-m  py-2 px-4 rounded-xl border-[1px] bg-gray-100 hover:opacity-95">
           Вход
         </button>
       </div>

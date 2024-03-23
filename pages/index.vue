@@ -1,11 +1,9 @@
 <template>
   <div class="bg-temp">
-    <div class="container items-center flex justify-center">
-      <div>
-        <h1 class="text-[54px] font-bold text-white">
-          Отпуск мечты без ожидания
-        </h1>
-      </div>
+    <div class="container flex justify-center items-center">
+      <h1 class="text-[64px] font-bold text-white text-center mt-10">
+        Влюбляйтесь в <br> путешествия вместе с<br> нами!
+      </h1> 
     </div>
   </div>
 </template>
@@ -21,6 +19,6 @@
   background-repeat: no-repeat;
 
   /* Make it cover the entire viewport */
-  height: 800px;
+  height: 450px;
 }
 </style>

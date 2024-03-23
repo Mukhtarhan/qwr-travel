@@ -12,7 +12,7 @@
           />
           <NuxtLink
             :to="item.url"
-            class="hover:text-light-blue"
+            class="hover:underline"
             v-for="item in MENU_DATA"
             :key="item.name"
             >{{ item.name }}</NuxtLink
@@ -34,7 +34,7 @@
         </form>
       </div>
 
-      <!-- Footer Info -->
+    
       <div class="flex gap-6">
         <div class="w-1/2">
           <h3 class="font-semibold">Тур ногами отель</h3>
