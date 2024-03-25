@@ -5,7 +5,7 @@
     </div>
   </div>
 </template>
-    
+
 <script setup lang="ts">
 defineProps({
   isCollapsed: {
@@ -14,7 +14,7 @@ defineProps({
   },
 });
 </script>
-    
+
 <style lang="postcss" scoped>
 .collapse {
   &-wrapper {

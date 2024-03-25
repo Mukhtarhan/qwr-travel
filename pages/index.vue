@@ -2,23 +2,22 @@
   <div class="bg-temp">
     <div class="container flex justify-center items-center">
       <h1 class="text-[64px] font-bold text-white text-center mt-10">
-        Влюбляйтесь в <br> путешествия вместе с<br> нами!
-      </h1> 
+        Влюбляйтесь в <br />
+        путешествия вместе с<br />
+        нами!
+      </h1>
     </div>
   </div>
 </template>
-  
-  <script setup lang="ts">
-</script>
-  
-  <style scoped>
+
+<script setup lang="ts"></script>
+
+<style scoped>
 .bg-temp {
   background: url('./../assets/images/beach.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
-  /* Make it cover the entire viewport */
   height: 450px;
 }
 </style>

@@ -29,20 +29,16 @@
     </TourFliterItem>
   </div>
 </template>
-  
-  <script setup lang="ts">
+
+<script setup lang="ts">
 import { FF, RATE_HOTELS, COUNTRIES } from './tour.data';
 
-const emit = defineEmits(['onUpdate'])
+const emit = defineEmits(['onUpdate']);
 
-function onUpdate() {
-
-}
-
-
+function onUpdate() {}
 </script>
-  
-  <style scoped lang="postcss">
+
+<style scoped lang="postcss">
 .ui-filter {
   &-label {
     @apply flex items-center justify-between font-medium text-sm cursor-pointer;

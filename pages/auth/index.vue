@@ -1,0 +1,88 @@
+<template>
+  <div
+    class="container max-w-400 mx-auto h-[800px] flex justify-center items-center"
+  >
+    <div class="w-full">
+      <button @click="activeTab = !activeTab">Click</button>
+      <div v-if="activeTab">
+        <h2 class="text-center font-semibold text-xl">Вход в аккаунт</h2>
+        <div class="max-w-2xl mx-auto mt-8">
+          <form @submit.prevent="" class="space-y-8">
+            <input
+              type="email"
+              placeholder="Email"
+              v-model="email"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-800"
+            />
+            <input
+              type="password"
+              placeholder="Пароль"
+              v-model="password"
+              class="focus:outline-none rounded-lg focus:border-blue-800"
+            />
+            <button type="submit" class="w-full hover:opacity-90">Войти</button>
+          </form>
+        </div>
+      </div>
+      <div v-else>
+        <h2 class="text-center font-semibold text-xl">Регистрация</h2>
+        <div class="max-w-2xl mx-auto mt-8">
+          <form @submit.prevent="" class="space-y-8">
+            <input
+              type="email"
+              placeholder="Email"
+              v-model="email"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-800"
+            />
+            <input
+              type="password"
+              placeholder="Пароль"
+              v-model="password"
+              class="focus:outline-none rounded-lg focus:border-blue-800"
+            />
+            <button type="submit" class="w-full hover:opacity-90">
+              Зарегистрировать
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const email = ref('');
+const password = ref('');
+const activeTab = ref(true);
+</script>
+
+<style scoped>
+form {
+  max-width: 420px;
+  margin: 30px auto;
+  background: white;
+  text-align: left;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+input {
+  display: block;
+  padding: 10px 6px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+button {
+  background: #021d46;
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 20px;
+}
+</style>

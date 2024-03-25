@@ -1,12 +1,11 @@
 <template>
-  <div
-    class="bg-white rounded-lg shadow-md flex  max-w-[760px] max-h-[260px]"
-  >
-    <div class="w-[200px] h-[260px] bg-center rounded-lg" :style="{backgroundImage: 'url(' + tour.image + ')'}">
-      
-    </div>
+  <div class="bg-white rounded-lg shadow-md flex max-w-[760px] max-h-[260px]">
+    <div
+      class="w-[200px] h-[260px] bg-center rounded-lg"
+      :style="{ backgroundImage: 'url(' + tour.image + ')' }"
+    ></div>
     <div class="p-4 w-[560px]">
-      <div class=" flex justify-between">
+      <div class="flex justify-between">
         <div class="flex justify-between items-center">
           <span v-for="n in tour.star" :key="n" class="mr-1">
             <svg
@@ -25,9 +24,12 @@
             </svg>
           </span>
         </div>
-        <div class=" flex gap-2 items-center">
+        <div class="flex gap-2 items-center">
           <span class="text-gray-300 text-[12px]">3467 отзывов</span>
-          <span class="text-white p-1 bg-green-500 font-bold rounded-md text-[14px]">{{ tour.comments.rating }}</span>
+          <span
+            class="text-white p-1 bg-green-500 font-bold rounded-md text-[14px]"
+            >{{ tour.comments.rating }}</span
+          >
         </div>
       </div>
       <div class="flex flex-col justify-between">
@@ -37,39 +39,36 @@
           <span>{{ tour.city }}</span>
         </div>
         <div class="text-gray-600 text-[14px] font-semibold flex flex-col">
-          <span v-for="service in tour.services" :key="service">{{ service }}</span>
+          <span v-for="service in tour.services" :key="service">{{
+            service
+          }}</span>
         </div>
-      <div class="flex items-center justify-between mt-6">
-        <p class="font-bold text-[22px]">от {{ tour.price }} ₸</p>
-        <div>
-          <div class="text-gray-500 text-sm text-bold flex">
-            <span>5 ночей, за 2 взр</span>
+        <div class="flex items-center justify-between mt-6">
+          <p class="font-bold text-[22px]">от {{ tour.price }} ₸</p>
+          <div>
+            <div class="text-gray-500 text-sm text-bold flex">
+              <span>5 ночей, за 2 взр</span>
+            </div>
+            <NuxtLink :to="`tour/${tour.id}`">
+              <button
+                @click="$emit('moreDetails')"
+                class="text-white bg-red-800 hover:bg-red-700 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+              >
+                Посмотреть тур
+              </button>
+            </NuxtLink>
           </div>
-          <NuxtLink :to="`tour/${tour.id}`">
-            <button
-        @click="$emit('moreDetails')"
-        class="text-white bg-red-800 hover:bg-red-700 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-      >
-        Посмотреть тур
-      </button>
-          </NuxtLink>
         </div>
       </div>
-      
     </div>
-    </div>
-
-    
   </div>
 </template>
-  
-<script setup lang="ts">
 
+<script setup lang="ts">
 defineProps({
- tour: {
-  type: Object,
-  default: () => {}
- }
-})
+  tour: {
+    type: Object,
+    default: () => {},
+  },
+});
 </script>
-  
