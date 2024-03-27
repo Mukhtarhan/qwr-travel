@@ -19,7 +19,13 @@
               v-model="password"
               class="focus:outline-none rounded-lg focus:border-blue-800"
             />
-            <button type="submit" class="w-full hover:opacity-90">Войти</button>
+            <button
+              type="submit"
+              class="w-full hover:opacity-90"
+              @click="sign_in"
+            >
+              Войти
+            </button>
             <div class="font-semibold text-m">
               <span class="text-gray-500"
                 >Неучетной записи?
@@ -50,7 +56,11 @@
               v-model="password"
               class="focus:outline-none rounded-lg focus:border-blue-800"
             />
-            <button type="submit" class="w-full hover:opacity-90">
+            <button
+              type="submit"
+              class="w-full hover:opacity-90"
+              @click="sign_up"
+            >
               Зарегистрировать
             </button>
           </form>
@@ -62,10 +72,25 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useUserStore } from '@/stores/UserStore';
 
 const email = ref('');
 const password = ref('');
 const activeTab = ref(true);
+
+const userStore = useUserStore();
+
+function sign_in() {
+  userStore.login(email.value, password.value);
+  email.value = '';
+  password.value = '';
+  console.log(userStore.users, 'netu');
+}
+function sign_up() {
+  userStore.signUp({ email: email.value, password: password.value });
+  email.value = '';
+  password.value = '';
+}
 </script>
 
 <style scoped>
