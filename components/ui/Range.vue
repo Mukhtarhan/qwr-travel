@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col justify-center">
     <div class="flex justify-evenly mt-4">
-      <span class="p-[10px] text-[14px] bg-gray-100 rounded-2xl"
+      <span class="p-[10px] text-[14px] bg-gray-200 rounded-2xl"
         >от {{ min_price }} ₸</span
       >
-      <span class="p-[10px] text-[14px] bg-gray-100 rounded-2xl"
+      <span class="p-[10px] text-[14px] bg-gray-200 rounded-2xl"
         >до {{ max_price }} ₸</span
       >
     </div>

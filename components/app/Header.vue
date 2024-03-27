@@ -32,18 +32,20 @@
             <option value="KZ">KZ</option>
           </select>
         </div>
-        <button class="text-m  py-2 px-4 rounded-xl border-[1px] bg-gray-100 hover:opacity-95">
-          Вход
-        </button>
+        <NuxtLink to="/auth">
+          <button
+            class="text-m py-2 px-4 rounded-xl border-[1px] bg-gray-100 hover:opacity-95"
+          >
+            Войти
+          </button>
+        </NuxtLink>
       </div>
     </div>
   </header>
 </template>
-    
+
 <script lang="ts" setup>
 import { MENU_DATA } from './menu.data';
 </script>
-    
-    <style lang="postcss" scoped>
-</style>
-    
+
+<style lang="postcss" scoped></style>

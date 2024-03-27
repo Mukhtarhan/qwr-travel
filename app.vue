@@ -1,15 +1,14 @@
 <template>
-  <div class="app">
+  <div class="app bg-gray-50">
     <AppHeader />
 
-    <NuxtPage />
+    <NuxtPage class="" />
 
     <AppFooter />
   </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style>
 .container {
@@ -17,4 +16,3 @@
   margin: auto;
 }
 </style>
-

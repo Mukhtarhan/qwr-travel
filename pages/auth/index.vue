@@ -3,11 +3,10 @@
     class="container max-w-400 mx-auto h-[800px] flex justify-center items-center"
   >
     <div class="w-full">
-      <button @click="activeTab = !activeTab">Click</button>
       <div v-if="activeTab">
-        <h2 class="text-center font-semibold text-xl">Вход в аккаунт</h2>
-        <div class="max-w-2xl mx-auto mt-8">
+        <div class="max-w-2xl mx-auto">
           <form @submit.prevent="" class="space-y-8">
+            <h2 class="text-center font-semibold text-2xl">Вход в аккаунт</h2>
             <input
               type="email"
               placeholder="Email"
@@ -21,13 +20,24 @@
               class="focus:outline-none rounded-lg focus:border-blue-800"
             />
             <button type="submit" class="w-full hover:opacity-90">Войти</button>
+            <div class="font-semibold text-m">
+              <span class="text-gray-500"
+                >Неучетной записи?
+                <span
+                  class="text-lg text-black cursor-pointer"
+                  @click="activeTab = false"
+                >
+                  Зарегистрироваться</span
+                >
+              </span>
+            </div>
           </form>
         </div>
       </div>
       <div v-else>
-        <h2 class="text-center font-semibold text-xl">Регистрация</h2>
-        <div class="max-w-2xl mx-auto mt-8">
+        <div class="max-w-2xl mx-auto">
           <form @submit.prevent="" class="space-y-8">
+            <h2 class="text-center font-semibold text-2xl">Регистрация</h2>
             <input
               type="email"
               placeholder="Email"

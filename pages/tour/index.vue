@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { tours } from '~/server/data';
+import { tours } from '~/services/data';
 
 const fltr = ['Сначала дешёвые', 'Сначала дорогие', 'По рейтингу'];
 const isOpened = ref(false);
@@ -71,3 +71,4 @@ const sortedTours = computed(() => {
 </script>
 
 <style scoped></style>
+~/services/data
