@@ -1,5 +1,5 @@
 <template>
-  <div class="app bg-gray-50">
+  <div class="app bg-gray-100">
     <AppHeader />
 
     <NuxtPage class="" />

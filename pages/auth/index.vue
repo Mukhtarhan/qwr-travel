@@ -11,12 +11,14 @@
               type="email"
               placeholder="Email"
               v-model="email"
+              required
               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-800"
             />
             <input
               type="password"
               placeholder="Пароль"
               v-model="password"
+              required
               class="focus:outline-none rounded-lg focus:border-blue-800"
             />
             <button
@@ -48,12 +50,14 @@
               type="email"
               placeholder="Email"
               v-model="email"
+              required
               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-800"
             />
             <input
               type="password"
               placeholder="Пароль"
               v-model="password"
+              required
               class="focus:outline-none rounded-lg focus:border-blue-800"
             />
             <button
@@ -70,7 +74,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue';
 import { useUserStore } from '@/stores/UserStore';
 

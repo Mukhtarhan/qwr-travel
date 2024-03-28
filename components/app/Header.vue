@@ -32,7 +32,16 @@
             <option value="KZ">KZ</option>
           </select>
         </div>
-        <NuxtLink to="/auth">
+
+        <button
+          class="text-m py-2 px-4 rounded-xl border-[1px] bg-gray-100 hover:opacity-95"
+          @click="userStore.logOut"
+          v-if="userStore.isAuth"
+        >
+          Выйти
+        </button>
+
+        <NuxtLink to="/auth" v-else>
           <button
             class="text-m py-2 px-4 rounded-xl border-[1px] bg-gray-100 hover:opacity-95"
           >
@@ -46,6 +55,9 @@
 
 <script lang="ts" setup>
 import { MENU_DATA } from './menu.data';
+import { useUserStore } from '@/stores/UserStore';
+
+const userStore = useUserStore();
 </script>
 
 <style lang="postcss" scoped></style>

@@ -1,30 +1,28 @@
-export const useUserStore = defineStore('users', () => {
-  const users = ref([]);
+export const useUserStore = defineStore('user', () => {
   const isAuth = ref(false);
-  const user = ref({});
-
-  users.value = JSON.parse(localStorage.getItem('users')).value_ || [];
+  const user = ref();
   const router = useRouter();
 
   const login = (email, password) => {
-    user.value = users.value.find(
-      u => u.email === email && u.password === password
-    );
-    if (user.value == undefined) {
+    user.value = JSON.parse(localStorage.getItem('user'));
+    if (user.value.email === email && user.value.password === password) {
       isAuth.value = true;
-      console.log(user.value, 'user is');
       alert('Успешно авторизован!');
-
       router.push('/');
     } else {
       alert('Неверный email или пароль!');
     }
   };
   const signUp = tempUser => {
-    users.value.push({ ...tempUser, myTours: [] });
-    localStorage.setItem('users', users);
+    user.value = { ...tempUser, myTours: [] };
+    localStorage.setItem('user', JSON.stringify(user.value));
     alert('Успешно зарегистрирован!');
     router.push('/');
+  };
+
+  const logOut = () => {
+    isAuth.value = false;
+    router.push('/auth');
   };
 
   return {
@@ -32,6 +30,6 @@ export const useUserStore = defineStore('users', () => {
     isAuth,
     user,
     signUp,
-    users,
+    logOut,
   };
 });
