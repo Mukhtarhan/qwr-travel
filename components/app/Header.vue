@@ -25,7 +25,7 @@
         <span class="text-white text-xl mr-3">+7708 288 57 95</span>
         <div>
           <select
-            class="focus:outline-none text-m font-semibold py-2 px-3 rounded-xl border-[1px] bg-gray-100 hover:opacity-95"
+            class="focus:outline-none text-m font-semibold p-1 rounded-xl border-[1px] bg-gray-100 hover:opacity-95"
           >
             <option value="EN">EN</option>
             <option value="RU">RU</option>
@@ -33,13 +33,9 @@
           </select>
         </div>
 
-        <button
-          class="text-m py-2 px-4 rounded-xl border-[1px] bg-gray-100 hover:opacity-95"
-          @click="userStore.logOut"
-          v-if="userStore.isAuth"
-        >
-          Выйти
-        </button>
+        <NuxtLink v-if="userStore.isAuth" to="/profile">
+          <IconsProfile class="text-white text-[38px] cursor-pointer" />
+        </NuxtLink>
 
         <NuxtLink to="/auth" v-else>
           <button
