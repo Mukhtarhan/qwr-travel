@@ -71,4 +71,3 @@ const sortedTours = computed(() => {
 </script>
 
 <style scoped></style>
-~/services/data

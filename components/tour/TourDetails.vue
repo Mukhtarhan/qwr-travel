@@ -1,15 +1,11 @@
 <template>
-  <div class="card">
-    <div class="grid grid-cols-2 gap-10">
-      <div class="p-7">
-        <img
-          :src="`${tour.image}`"
-          class="mx-auto my-7"
-          width="500"
-          height="650"
-        />
+  <div class="card w-full py-7">
+    <UiBreadCrumbs :links="links" />
+    <div class="flex mt-6">
+      <div class="">
+        <TourGallery />
       </div>
-      <div class="p-7">
+      <div class="">
         <h2 class="text-4xl my-7">{{ tour.name }}</h2>
         <p class="text-xl my-7">Price - ${{ tour.price }}</p>
         <h3 class="font-bold border-b-2 mb-4 pb-2">Product description:</h3>
@@ -24,7 +20,22 @@
 </template>
 
 <script setup>
-const { product } = defineProps(['tour']);
+const { tour } = defineProps(['tour']);
+
+const links = [
+  {
+    name: 'Главный',
+    url: '/',
+  },
+  {
+    name: 'Туры',
+    url: '/tour',
+  },
+  {
+    name: `${tour.name}`,
+    url: '/',
+  },
+];
 </script>
 
 <style scoped>

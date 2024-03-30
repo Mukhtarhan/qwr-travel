@@ -1,6 +1,6 @@
 <template>
-  <div class="app bg-gray-100">
-    <AppHeader />
+  <div class="app bg-zinc-100">
+    <AppHeader class="text-black bg-white" />
 
     <NuxtPage class="" />
 

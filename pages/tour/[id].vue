@@ -1,12 +1,10 @@
 <template>
-  <div>
+  <div class="container">
     <TourDetails :tour="tour" />
   </div>
 </template>
 
 <script setup lang="ts">
-const { id } = useRoute().params;
-
 const tour = {
   id: 7,
   name: 'Gureli Hotel',
