@@ -48,12 +48,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { tours } from '~/services/data';
+<script setup>
+import getHotels from '@/composable/api';
 
 const fltr = ['Сначала дешёвые', 'Сначала дорогие', 'По рейтингу'];
 const isOpened = ref(false);
 const sortValue = ref('По рейтингу');
+
 const links = [
   {
     name: 'Главный',
@@ -65,7 +66,14 @@ const links = [
   },
 ];
 
-const changeSortValue = (temp: string) => {
+const { hotels, load } = getHotels();
+
+load();
+
+const tours = hotels.value;
+console.log(hotels);
+
+const changeSortValue = temp => {
   sortValue.value = temp;
   isOpened.value = false;
 };
