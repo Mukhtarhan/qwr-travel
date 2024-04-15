@@ -3,6 +3,12 @@ export const useUserStore = defineStore('user', () => {
   const user = ref();
   const router = useRouter();
 
+  function handleAuth() {
+    if (JSON.parse(localStorage.getItem('user')).email) {
+      console.log('Fine');
+    }
+  }
+
   const login = (email, password) => {
     user.value = JSON.parse(localStorage.getItem('user'));
     if (user.value.email === email && user.value.password === password) {
@@ -28,6 +34,7 @@ export const useUserStore = defineStore('user', () => {
   return {
     login,
     isAuth,
+    handleAuth,
     user,
     signUp,
     logOut,
