@@ -49,7 +49,8 @@
 </template>
 
 <script setup>
-import getHotels from '@/composable/api';
+import getHotels from '@/services/api';
+import { tours } from '~/services/data';
 
 const fltr = ['Сначала дешёвые', 'Сначала дорогие', 'По рейтингу'];
 const isOpened = ref(false);
@@ -70,7 +71,6 @@ const { hotels, load } = getHotels();
 
 load();
 
-const tours = hotels.value;
 console.log(hotels);
 
 const changeSortValue = temp => {
@@ -96,3 +96,4 @@ const sortedTours = computed(() => {
 </script>
 
 <style scoped></style>
+~/services/api
