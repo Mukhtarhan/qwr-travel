@@ -9,8 +9,13 @@
     </div>
   </div>
 
-  <div class="h-[700px] container p-6">
+  <div class="container p-6">
     <h2 class="text-[42px] font-bold mb-8">Горящие туры из г. Алматы</h2>
+    <div></div>
+  </div>
+
+  <!-- <div class="h-[700px] container p-6">
+    
     <swiper
       :slides-per-view="4"
       :space-between="30"
@@ -28,13 +33,13 @@
 
       ...
     </swiper>
-  </div>
+  </div> -->
 </template>
 
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
+// import { Swiper, SwiperSlide } from 'swiper/vue';
 
-import 'swiper/css';
+// import 'swiper/css';
 
 const promotions = [
   {
@@ -50,11 +55,6 @@ const promotions = [
   {
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYaOe_uqfiwXvbZkxM2JZsaFevAkK0_kR8nXD0ww1SebcDeBnDQ9eNFdIlKZGemCLVsMY&usqp=CAU',
-    url: '',
-  },
-  {
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFYPw3wNk29j_FAohJniU33Hhoe65ISQLKZfKzx_wif-2w4Lo1D3rwJd9Mze7lMTUs47k&usqp=CAU',
     url: '',
   },
   {

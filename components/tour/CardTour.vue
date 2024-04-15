@@ -51,7 +51,6 @@
             </div>
             <NuxtLink :to="`tour/${tour.id}`">
               <button
-                @click="$emit('moreDetails')"
                 class="text-white bg-red-800 hover:bg-red-700 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
               >
                 Посмотреть тур

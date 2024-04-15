@@ -49,8 +49,7 @@
 </template>
 
 <script setup>
-import getHotels from '@/services/api';
-import { tours } from '~/services/data';
+import { getHotels } from '@/services/api';
 
 const fltr = ['Сначала дешёвые', 'Сначала дорогие', 'По рейтингу'];
 const isOpened = ref(false);
@@ -67,11 +66,9 @@ const links = [
   },
 ];
 
-const { hotels, load } = getHotels();
+const tours = await getHotels();
 
-load();
-
-console.log(hotels);
+console.log(tours._rawValue);
 
 const changeSortValue = temp => {
   sortValue.value = temp;
@@ -79,7 +76,7 @@ const changeSortValue = temp => {
 };
 
 const sortedTours = computed(() => {
-  let tempComment = [...tours];
+  let tempComment = tours.value;
 
   if (sortValue.value === 'Сначала дорогие') {
     tempComment = tempComment.sort((a, b) => b.price - a.price);

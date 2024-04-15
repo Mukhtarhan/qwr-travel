@@ -1,22 +1,27 @@
-import { ref } from 'vue';
-
-const getHotels = () => {
+export const getHotels = async () => {
   const hotels = ref([]);
-
-  const load = async () => {
-    try {
-      let data = await fetch('http://localhost:8000/hotels');
-      hotels.value = await data.json();
-      if (!data.ok) {
-        console.log('data not avaibale');
-      }
-    } catch (err) {
-      console.log('error');
+  try {
+    let data = await fetch('http://localhost:8000/hotels');
+    hotels.value = await data.json();
+    if (!data.ok) {
+      console.log('data not avaibale');
     }
-    console.log(hotels.value);
-  };
-
-  return { hotels, load };
+  } catch (err) {
+    console.log('error');
+  }
+  return hotels;
 };
 
-export default getHotels;
+export const getHotel = async id => {
+  const hotel = ref();
+  try {
+    let data = await fetch(`http://localhost:8000/hotels/${id}`);
+    hotel.value = await data.json();
+    if (!data.ok) {
+      console.log('data not avaibale');
+    }
+  } catch (err) {
+    console.log('error');
+  }
+  return hotel;
+};
