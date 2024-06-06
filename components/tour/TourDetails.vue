@@ -40,7 +40,7 @@
           </svg>
           <span class="font-semibold"> В избранное</span>
         </span>
-        <div class="mt-12 rounded-lg shadow-lg w-full p-4">
+        <div class="mt-12 rounded-lg bg-white shadow-lg w-full p-4">
           <p class="text-lg my-4 items-center">
             Тур с перелётом от
             <span class="font-bold text-[22px] ml-1"> {{ tour.price }}₸</span>
@@ -62,8 +62,9 @@
             <span
               class="flex gap-3 cursor-pointer items-center text-lg text-center justify-center"
               id="arrow"
+              @click="openModal"
             >
-              <span disabled class="text-m">Все услуги</span>
+              <span class="text-m">Все услуги</span>
               <svg
                 width="28"
                 viewBox="0 0 32 32"
@@ -78,7 +79,7 @@
             </span>
           </div>
         </div>
-        <div class="mt-12 rounded-lg shadow-lg w-full">
+        <div class="mt-12 rounded-lg bg-white shadow-lg w-full">
           <p class="text-xl my-7">Price - ${{ tour.price }}</p>
           <h3 class="font-bold border-b-2 mb-4 pb-2">Product description:</h3>
           <p class="mb-7">{{ tour.services }}</p>
@@ -94,7 +95,10 @@
 
 <script setup>
 const { tour } = defineProps(['tour']);
-
+const emit = defineEmits(['open-modal']);
+function openModal() {
+  emit('open-modal');
+}
 const links = [
   {
     name: 'Главный',
@@ -114,6 +118,10 @@ const links = [
 <style scoped>
 img {
   max-width: 400px;
+}
+
+dialog::backdrop {
+  background: rgb(255 0 0 / 25%);
 }
 
 #arrow svg {

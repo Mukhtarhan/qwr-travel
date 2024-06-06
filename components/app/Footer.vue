@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-200 text-black py-8 px-4 text-lg">
+  <footer class="bg text-black py-8 px-4 text-lg">
     <div class="container">
       <div class="flex mb-8 justify-between">
         <div class="flex flex-col">
@@ -34,7 +34,6 @@
         </form>
       </div>
 
-    
       <div class="flex gap-6">
         <div class="w-1/2">
           <h3 class="font-semibold">Тур ногами отель</h3>
@@ -64,8 +63,7 @@
     </div>
   </footer>
 </template>
-    
-  <script setup lang="ts">
+
+<script setup lang="ts">
 import { MENU_DATA } from './menu.data';
 </script>
-    
