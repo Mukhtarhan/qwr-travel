@@ -23,15 +23,6 @@
 
       <div class="flex items-center space-x-2 gap-2">
         <span class="text-xl mr-3">+7708 288 57 95</span>
-        <div>
-          <select
-            class="focus:outline-none text-m font-semibold p-1 rounded-xl border-[1px] bg-inherit hover:opacity-95"
-          >
-            <option value="EN" class="text-black">EN</option>
-            <option value="RU" class="text-black">RU</option>
-            <option value="KZ" class="text-black">KZ</option>
-          </select>
-        </div>
 
         <NuxtLink v-if="userStore.isAuth" to="/profile">
           <IconsProfile class="text-black text-[34px] cursor-pointer" />

@@ -29,12 +29,13 @@
         >
           <svg
             class="mr-2 cursor-pointer"
+            @click="toggleFavourite"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             width="26"
           >
             <path
-              fill="#A9A9A9"
+              :fill="isFavourite ? '#FA7070' : '#A9A9A9'"
               d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
             />
           </svg>
@@ -56,9 +57,17 @@
               <IconsTrain />
             </div>
           </div>
-          <div class="py-6">
+          <div class="pt-6">
             <h3 class="font-semibold text-lg">Услуги и удобства</h3>
-            <div class="text-black">✔ Ресторан</div>
+            <div class="grid grid-cols-2 mt-4 gap-2">
+              <div
+                class="text-black"
+                v-for="service in tour.services"
+                :key="service"
+              >
+                ✔ {{ service }}
+              </div>
+            </div>
             <span
               class="flex gap-3 cursor-pointer items-center text-lg text-center justify-center"
               id="arrow"
@@ -79,7 +88,7 @@
             </span>
           </div>
         </div>
-        <div class="mt-12 rounded-lg bg-white shadow-lg w-full">
+        <div class="mt-4 rounded-lg bg-white shadow-lg w-full p-4">
           <p class="text-xl my-7">Price - ${{ tour.price }}</p>
           <h3 class="font-bold border-b-2 mb-4 pb-2">Product description:</h3>
           <p class="mb-7">{{ tour.services }}</p>
@@ -98,6 +107,10 @@ const { tour } = defineProps(['tour']);
 const emit = defineEmits(['open-modal']);
 function openModal() {
   emit('open-modal');
+}
+const isFavourite = ref(false);
+function toggleFavourite() {
+  isFavourite.value = !isFavourite.value;
 }
 const links = [
   {
@@ -118,10 +131,6 @@ const links = [
 <style scoped>
 img {
   max-width: 400px;
-}
-
-dialog::backdrop {
-  background: rgb(255 0 0 / 25%);
 }
 
 #arrow svg {
